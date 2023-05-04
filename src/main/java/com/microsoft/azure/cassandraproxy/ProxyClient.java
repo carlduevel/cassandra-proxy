@@ -118,7 +118,7 @@ public class ProxyClient  {
                 socketPromise.complete();
             }  else {
                 this.closed = true;
-                LOG.error(String.format("%s - Couldn't connect to server", this.identifier));
+                LOG.error(String.format("%s - Couldn't connect to server", this.identifier),res.cause());
                 socketPromise.fail("Couldn't connect to server");
             }
         });
